@@ -368,6 +368,14 @@ VERSION = config("VERSION", default="dev")
 
 ADMIN_ENABLED = config("ADMIN_ENABLED", default=False, cast=bool)
 
+API_KEY = config(
+    "API_KEY",
+    default=secret(
+        "API_KEY_FILE",
+        default=None,
+    ),
+)
+
 TRACK_TIME = config("TRACK_TIME", default=True, cast=bool)
 
 TZ = zoneinfo.ZoneInfo(TIME_ZONE)
